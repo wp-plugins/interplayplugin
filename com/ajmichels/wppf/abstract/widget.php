@@ -32,15 +32,16 @@ extends WP_Widget
 	
 	/* PROPERTIES ******************************************************************************* */
 	
-	protected $options = array();
+	public $options		= array();
+	public $controls	= array();
 	
 	
 	/* CONSTRUCTOR ****************************************************************************** */
 	
-	public function __construct ( $id_base = false, $name, $widget_options = array(), $control_options = array() )
+	public function __construct ( $id_base = false, $name )
 	{
 		$this->log( 'Initializing Widget: ' . $name );
-		parent::WP_Widget( $id_base, $name, $widget_options, $control_options );
+		parent::WP_Widget( $id_base, $name, $this->options, $this->controls );
 	}
 	
 	
@@ -56,14 +57,23 @@ extends WP_Widget
 	protected function getOptionData ( $instance = null )
 	{
 		$options = array();
+		
 		foreach ( $this->options as $opt => $value ) {
-			$options[$opt]	= $value;
+			
+			$options[$opt]	= array(
+								'name'	=>$this->get_field_name( $opt ),
+								'id'	=>$this->get_field_id( $opt ),
+								'value'	=>esc_attr( $value )
+								);
+			
 			if ( $instance != null && isset( $instance[$opt] ) ) {
-				$options[$opt] = $instance[$opt];
+				$options[$opt]['value']	= esc_attr( $instance[$opt] );
 			}
 			
 		}
+		
 		return $options;
+		
 	}
 	
 	

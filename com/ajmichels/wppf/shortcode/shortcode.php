@@ -50,14 +50,23 @@ implements com_ajmichels_wppf_interface_iManaged
 	protected function getAttributesData ( $instance = null )
 	{
 		$attributes = array();
+		
 		foreach ( $this->attributes as $attr => $value ) {
-			$attributes[$attr]	= $value;
+			
+			$attributes[$attr]	= array(
+									'name'	=> $attr,
+									'id'	=> $attr,
+									'value'	=> $value
+									);
+			
 			if ( $instance != null && isset( $instance[$attr] ) ) {
-				$attributes[$attr] = $instance[$attr];
+				$attributes[$attr]['value'] = $instance[$attr];
 			}
 			
 		}
+		
 		return $attributes;
+		
 	}
 	
 	

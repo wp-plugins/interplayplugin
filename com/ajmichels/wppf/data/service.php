@@ -115,6 +115,7 @@ implements com_ajmichels_wppf_interface_iDataService
 		$options = array();
 		$options['http'] = array();
 		$options['http']['method'] = 'POST';
+		$options['http']['content'] = ' ';
 		$options['http']['header'] = 'Content-type: application/x-www-form-urlencoded\r\n';
 		$options['http']['timeout'] = 4;
 		$context = stream_context_create($options);
