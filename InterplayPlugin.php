@@ -6,7 +6,7 @@
  * Plugin URI:		http://www.interplay.org/wordpress
  * Description:		This plugin provides regional interplay.org content for your wordpress powered website.
  * Author:			Interplay.org
- * Version:			1.5.0
+ * Version:			2.0.0
  * Author URI:		http://www.interplay.org
  * 
  * Copyright (C) 2012 Body Wisdom, Inc
