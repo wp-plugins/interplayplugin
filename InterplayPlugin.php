@@ -2,12 +2,12 @@
 
 /** ********************************************************************************************** /
  * 
- * Plugin Name:		Interplay
- * Plugin URI:		http://www.interplay.org/wordpress
- * Description:		This plugin provides regional interplay.org content for your wordpress powered website.
- * Author:			Interplay.org
- * Version:			2.0.0
- * Author URI:		http://www.interplay.org
+ * Plugin Name:  Interplay
+ * Plugin URI:   http://www.interplay.org/wordpress
+ * Description:  This plugin provides regional interplay.org content for your wordpress powered website.
+ * Author:       Interplay.org
+ * Version:      2.1.0
+ * Author URI:   http://www.interplay.org
  * 
  * Copyright (C) 2012 Body Wisdom, Inc
  * 
@@ -36,8 +36,8 @@ com_ajmichels_common_autoLoader::getInstance( dirname(__FILE__) );
 
 /**
  * 
- * @title			InterplayPlugin.php
- * @contributors	AJ Michels (www.ajmichels.com)
+ * @title         InterplayPlugin.php
+ * @contributors  AJ Michels (www.ajmichels.com)
  * 
  */
 class InterplayPlugin
@@ -81,9 +81,9 @@ implements com_ajmichels_common_iSingleton
 		
 		$sfXml = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'phpSpring.xml';
 		$sfProps = array(
-					'pluginUrl'			=> $this->getPluginUrl(),
-					'wordpressUrl'		=> includes_url(),
-					'webServiceDomain'	=> $wsUrl
+					'pluginUrl'        => $this->getPluginUrl(),
+					'wordpressUrl'     => includes_url(),
+					'webServiceDomain' => $wsUrl
 					);
 		$this->sf = new com_ajmichels_phpSpring_bean_factory_default( $sfXml, array(), $sfProps );
 		$this->sf->setParent( $this->wppf_serviceFactory );
@@ -109,7 +109,7 @@ implements com_ajmichels_common_iSingleton
 	/**
 	 * Register Plugin Options with the option manager.
 	 * 
-	 * @return void
+	 * @return  void
 	 * 
 	 */
 	protected function options ()
@@ -119,6 +119,7 @@ implements com_ajmichels_common_iSingleton
 		$this->os->register( 'subscription_key' );
 		$this->os->register( 'region-scope' );
 		$this->os->register( 'single-event-page' );
+		$this->os->register( 'data_type' );
 		$this->os->register( 'calendar-color-primary' );
 		$this->os->register( 'calendar-color-accent' );
 		$this->os->register( 'countdown-color-primary' );
@@ -129,21 +130,21 @@ implements com_ajmichels_common_iSingleton
 	/**
 	 * Register Plugin Actions with the action manager.
 	 * 
-	 * @return void
+	 * @return  void
 	 * 
 	 */
 	protected function actions ()
 	{
 		
-		$this->am->register( $this->sf->getBean( 'CreateAdminPagesAction' ),	array('admin_menu') );
-		$this->am->register( $this->sf->getBean( 'EnqueueResourcesAction'),		array('init') );
+		$this->am->register( $this->sf->getBean( 'CreateAdminPagesAction' ), array('admin_menu') );
+		$this->am->register( $this->sf->getBean( 'EnqueueResourcesAction'),  array('init') );
 	}
 	
 	
 	/**
 	 * Register Plugin Shortcodes with the shortcode manager.
 	 * 
-	 * @return void
+	 * @return  void
 	 * 
 	 */
 	protected function shortcodes ()

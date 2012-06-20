@@ -1,19 +1,19 @@
 <beans>
 	
-	<bean id="DefaultWebServiceUrl"	class="com_ajmichels_wppf_data_webServiceUrl" singleton="false">
+	<bean id="DefaultWebServiceUrl" class="com_ajmichels_wppf_data_webServiceUrl" singleton="false">
 		<property name="Domain">
 			<value>${webServiceDomain}</value>
 		</property>
 	</bean>
 	
-	<bean id="AuthService"	class="org_interplay_wordpress_auth_service">
+	<bean id="AuthService" class="org_interplay_wordpress_auth_service">
 		<property name="OptionManager">
 			<!-- Defined in WPPF Service Factory -->
 			<ref bean="OptionManager" />
 		</property>
 	</bean>
 	
-	<bean id="EventService"	class="org_interplay_wordpress_event_service">
+	<bean id="EventService" class="org_interplay_wordpress_event_service">
 		<property name="DAO">
 			<ref bean="EventDAO" />
 		</property>
@@ -161,50 +161,50 @@
 	
 	<!-- View Objects -->
 	
-	<bean id="CalendarSettingsView"		singleton="false" class="org_interplay_wordpress_event_calendarSettingsView" />
+	<bean id="CalendarSettingsView"  singleton="false" class="org_interplay_wordpress_event_calendarSettingsView" />
 	
-	<bean id="CalendarView"				singleton="false" class="org_interplay_wordpress_event_calendarView" />
+	<bean id="CalendarView"          singleton="false" class="org_interplay_wordpress_event_calendarView" />
 	
-	<bean id="CountdownSettingsView"	singleton="false" class="org_interplay_wordpress_event_countdownSettingsView" />
+	<bean id="CountdownSettingsView" singleton="false" class="org_interplay_wordpress_event_countdownSettingsView" />
 	
-	<bean id="CountdownView"			singleton="false" class="org_interplay_wordpress_event_countdownView" />
+	<bean id="CountdownView"         singleton="false" class="org_interplay_wordpress_event_countdownView" />
 	
-	<bean id="EventListView"			singleton="false" class="org_interplay_wordpress_event_listView">
+	<bean id="EventListView"         singleton="false" class="org_interplay_wordpress_event_listView">
 		<property name="EventView">
 			<ref bean="EventView" />
 		</property>
 	</bean>
 	
-	<bean id="EventView"				singleton="false" class="org_interplay_wordpress_event_detailsView" />
+	<bean id="EventView"             singleton="false" class="org_interplay_wordpress_event_detailsView" />
 	
-	<bean id="LeaderListView"			singleton="false" class="org_interplay_wordpress_leader_listView">
+	<bean id="LeaderListView"        singleton="false" class="org_interplay_wordpress_leader_listView">
 		<property name="LeaderView">
 			<ref bean="LeaderView" />
 		</property>
 	</bean>
 	
-	<bean id="LeaderView"				singleton="false" class="org_interplay_wordpress_leader_view">
+	<bean id="LeaderView"            singleton="false" class="org_interplay_wordpress_leader_view">
 		<property name="LeaderBioView">
 			<ref bean="LeaderBioView" />
 		</property>
 	</bean>
 	
-	<bean id="LeaderBioView"			singleton="false" class="org_interplay_wordpress_leader_bioView" />
+	<bean id="LeaderBioView"         singleton="false" class="org_interplay_wordpress_leader_bioView" />
 	
-	<bean id="PerformingGroupListView"	singleton="false" class="org_interplay_wordpress_performingGroup_listView">
+	<bean id="PerformingGroupListView" singleton="false" class="org_interplay_wordpress_performingGroup_listView">
 		<property name="PerformingGroupView">
 			<ref bean="PerformingGroupView" />
 		</property>
 	</bean>
 	
-	<bean id="PerformingGroupView"		singleton="false" class="org_interplay_wordpress_performingGroup_view" />
+	<bean id="PerformingGroupView" singleton="false" class="org_interplay_wordpress_performingGroup_view" />
 	
-	<bean id="PluginSettingsView"		singleton="false" class="org_interplay_wordpress_admin_pluginSettingsView" />
+	<bean id="PluginSettingsView"  singleton="false" class="org_interplay_wordpress_admin_pluginSettingsView" />
 	
 	
 	<!-- Action Objects -->
 	
-	<bean id="CreateAdminPagesAction"	class="org_interplay_wordpress_action_createAdminPages">
+	<bean id="CreateAdminPagesAction" class="org_interplay_wordpress_action_createAdminPages">
 		<property name="PluginSettingsView">
 			<ref bean="PluginSettingsView" />
 		</property>
@@ -215,7 +215,7 @@
 	</bean>
 	
 	
-	<bean id="EnqueueResourcesAction"	class="org_interplay_wordpress_action_enqueueResources">
+	<bean id="EnqueueResourcesAction" class="org_interplay_wordpress_action_enqueueResources">
 		<property name="PluginUrl">
 			<value>${pluginUrl}</value>
 		</property>
@@ -227,7 +227,7 @@
 	
 	<!-- Shortcode Objects -->
 	
-	<bean id="LeaderListShortcode"			class="org_interplay_wordpress_shortcode_leaderList">
+	<bean id="LeaderListShortcode" class="org_interplay_wordpress_shortcode_leaderList">
 		<property name="LeaderService">
 			<ref bean="LeaderService" />
 		</property>
@@ -239,7 +239,7 @@
 		</property>
 	</bean>
 	
-	<bean id="EventListShortcode"			class="org_interplay_wordpress_shortcode_eventList">
+	<bean id="EventListShortcode" class="org_interplay_wordpress_shortcode_eventList">
 		<property name="EventService">
 			<ref bean="EventService" />
 		</property>
@@ -248,7 +248,7 @@
 		</property>
 	</bean>
 	
-	<bean id="SingleEventShortcode"			class="org_interplay_wordpress_shortcode_singleEvent">
+	<bean id="SingleEventShortcode" class="org_interplay_wordpress_shortcode_singleEvent">
 		<property name="EventService">
 			<ref bean="EventService" />
 		</property>

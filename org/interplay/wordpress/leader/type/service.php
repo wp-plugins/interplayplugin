@@ -2,25 +2,25 @@
 
 /**
  * 
- * @package 		org.interplay.wordpress.leader.type
- * @title 			service.php
- * @contributors 	AJ Michels (www.ajmichels.com)
- * @version 		1.5.0
- * @copyright		Copyright (C) 2012 Body Wisdom, Inc
- * 					
- * 					This program is free software; you can redistribute it and/or
- * 					modify it under the terms of the GNU General Public License
- * 					as published by the Free Software Foundation; either version 2
- * 					of the License, or (at your option) any later version.
- * 					
- * 					This program is distributed in the hope that it will be useful,
- * 					but WITHOUT ANY WARRANTY; without even the implied warranty of
- * 					MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * 					GNU General Public License for more details.
- * 					
- * 					You should have received a copy of the GNU General Public License
- * 					along with this program; if not, write to the Free Software
- * 					Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * @package       org.interplay.wordpress.leader.type
+ * @title         service.php
+ * @contributors  AJ Michels (www.ajmichels.com)
+ * @version       1.5.0
+ * @copyright     Copyright (C) 2012 Body Wisdom, Inc
+ *                
+ *                This program is free software; you can redistribute it and/or
+ *                modify it under the terms of the GNU General Public License
+ *                as published by the Free Software Foundation; either version 2
+ *                of the License, or (at your option) any later version.
+ *                
+ *                This program is distributed in the hope that it will be useful,
+ *                but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *                MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *                GNU General Public License for more details.
+ *                
+ *                You should have received a copy of the GNU General Public License
+ *                along with this program; if not, write to the Free Software
+ *                Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  * 
  */
 class org_interplay_wordpress_leader_type_service
@@ -63,10 +63,10 @@ implements com_ajmichels_wppf_interface_iService
 	
 	private function setData ()
 	{
-		$dao	= $this->getDAO();
-		$wsu	= $this->getWebServiceUrl();
-		$ds		= $this->getDataService();
-		$as		= $this->getAuthService();
+		$dao = $this->getDAO();
+		$wsu = $this->getWebServiceUrl();
+		$ds  = $this->getDataService();
+		$as  = $this->getAuthService();
 		
 		$wsu->setScriptPath( 'LeaderTypeService.cfc' );
 		$wsu->setParameter( 'method', 'getLeaderTypesRemotely' );
@@ -89,42 +89,36 @@ implements com_ajmichels_wppf_interface_iService
 	
 	public function getDataService ()
 	{
-		
 		return $this->dataService;
 	}
 	
 	
 	public function setDataService ( com_ajmichels_wppf_data_service &$service )
 	{
-		
 		$this->dataService = $service;
 	}
 	
 	
 	public function setWebServiceUrl ( com_ajmichels_wppf_data_webServiceUrl &$url )
 	{
-		
 		$this->wsUrl = $url;
 	}
 	
 	
 	public function getWebServiceUrl ()
 	{
-		
 		return $this->wsUrl;
 	}
 	
 	
 	public function getAuthService ()
 	{
-		
 		return $this->AuthService;
 	}
 	
 	
 	public function setAuthService ( org_interplay_wordpress_auth_service &$src )
 	{
-		
 		$this->AuthService = $src;
 	}
 	
