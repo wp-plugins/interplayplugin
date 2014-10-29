@@ -476,8 +476,8 @@ extends com_ajmichels_common_abstractClass
 						else {
 							$dependentBeanInstance = $localBeanCache[$dependentBeanDef->getID()];
 						}
-						
-						call_user_func( array( &$beanInstance, $propertyMethod ), &$dependentBeanInstance );
+						$dependentBeanInstance=&$dependentBeanInstance;
+						call_user_func( array( &$beanInstance, $propertyMethod ), $dependentBeanInstance );
 						
 					}
 				}

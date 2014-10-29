@@ -57,7 +57,7 @@ implements com_ajmichels_wppf_interface_iDataInterpreter
 	
 		if ($data != '') {
 			$sxe = simplexml_load_string($data);
-			$this->parseNode($sxe, &$this->data);
+			$this->parseNode($sxe, $this->data);
 			$rtnData = $this->data;
 		}
 		else {
@@ -86,7 +86,7 @@ implements com_ajmichels_wppf_interface_iDataInterpreter
 			}
 			$childAssociative = $this->associativeTest($node);
 			foreach ($node as $child) {
-				$this->parseNode($child, &$childData, $childAssociative);
+				$this->parseNode($child, $childData, $childAssociative);
 			}
 		}
 	}
