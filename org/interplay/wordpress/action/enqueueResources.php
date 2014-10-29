@@ -42,8 +42,11 @@ extends com_ajmichels_wppf_action_action
 		$styles['jquery-ui-dialog'] = array( $url . 'css/jQuery/jquery-ui-1.8.20.custom.min.css', array(), false, 'all' );
 		$styles['interplaycss']     = array( $url . 'css/InterplayPlugin.min.css', array(), '1.0', 'screen' );
 		
-		foreach ( $styles as $styleName => $styleData ) {
+		if(!empty($styles))
+		{
+			foreach ( $styles as $styleName => $styleData ) {
 			wp_enqueue_style( $styleName, $styleData[0], $styleData[1], $styleData[2], $styleData[3] );
+					}
 		}
 		
 		/* Create array of JavaScript references then loop through them adding them to the queue. */
@@ -53,10 +56,11 @@ extends com_ajmichels_wppf_action_action
 		$scripts['colorpickerjs']   = array( $url . 'js/ColorPicker.min.js', array('jquery') );
 		$scripts['calendarjs']      = array( $url . 'js/InterplayCalendar.min.js', array('jquery') );
 		$scripts['colorinverterjs'] = array( $url . 'js/ColorInverter.min.js', array() );
-		
+		if(!empty($scripts)){
 		foreach ( $scripts as $scriptName => $scriptData ) {
 			wp_enqueue_script( $scriptName, $scriptData[0], $scriptData[1] );
 		}
+							}
 		
 	}
 	
